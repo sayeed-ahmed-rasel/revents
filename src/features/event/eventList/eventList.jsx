@@ -3,12 +3,12 @@ import EventListItem from "./eventListItem";
 
 export class eventList extends Component {
   render() {
+    const { events } = this.props;
     return (
       <div>
-        <EventListItem />
-        <EventListItem />
-        <EventListItem />
-        <EventListItem />
+        {events.map((event) => {
+          return <EventListItem key={event.id} event={event} />;
+        })}
       </div>
     );
   }
